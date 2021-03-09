@@ -9,7 +9,7 @@
     "client-start": "cd ./client && npm start",
     "all-install": "npm install && npm run client-install",
     "prebuild-react": "rm -rf build/ && cd ./client/ && REACT_APP_SERVER_PORT=8080 npm run build && cp -r build/ ../build/",
-    "dev": "concurrently --kill-others-on-fail \"nodemon server.js\" \"npm run client-start\"",
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "PORT=8080 node server.js"
   },
@@ -17,11 +17,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "concurrently": "^4.1.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "morgan": "^1.9.1"
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.11"
